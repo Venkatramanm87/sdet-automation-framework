@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="openApplication"/>
+          <include name="verifyLogin" invocation-numbers="2"/>
         </methods>
       </class> <!-- com.demo.sdet.tests.LoginTest -->
     </classes>
