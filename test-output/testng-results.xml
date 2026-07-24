@@ -1,109 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-22T22:16:45 CDT" name="Default suite" finished-at="2026-07-22T22:17:06 CDT" duration-ms="20972">
+  <suite started-at="2026-07-23T22:28:59 CDT" name="Default suite" finished-at="2026-07-23T22:29:02 CDT" duration-ms="3131">
     <groups>
     </groups>
-    <test started-at="2026-07-22T22:16:45 CDT" name="Default test" finished-at="2026-07-22T22:17:06 CDT" duration-ms="20972">
-      <class name="com.demo.sdet.tests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:46 CDT" name="setUp" finished-at="2026-07-22T22:16:49 CDT" duration-ms="2978" status="PASS">
+    <test started-at="2026-07-23T22:28:59 CDT" name="Default test" finished-at="2026-07-23T22:29:02 CDT" duration-ms="3131">
+      <class name="com.demo.sdet.api.tests.UserTests">
+        <test-method is-config="true" signature="setupData()[pri:0, instance:com.demo.sdet.api.tests.UserTests@6d763516]" started-at="2026-07-23T22:28:59 CDT" name="setupData" finished-at="2026-07-23T22:28:59 CDT" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLogin(com.demo.sdet.model.LoginData)[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:49 CDT" name="verifyLogin" data-provider="loginData" finished-at="2026-07-22T22:16:50 CDT" duration-ms="439" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.demo.sdet.model.LoginData@17ca8b92]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setupData -->
+        <test-method signature="createUserTest()[pri:1, instance:com.demo.sdet.api.tests.UserTests@6d763516]" started-at="2026-07-23T22:28:59 CDT" name="createUserTest" finished-at="2026-07-23T22:29:01 CDT" duration-ms="2117" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:50 CDT" name="tearDown" finished-at="2026-07-22T22:16:50 CDT" duration-ms="306" status="PASS">
+        </test-method> <!-- createUserTest -->
+        <test-method signature="getUserTest()[pri:2, instance:com.demo.sdet.api.tests.UserTests@6d763516]" started-at="2026-07-23T22:29:01 CDT" name="getUserTest" finished-at="2026-07-23T22:29:02 CDT" duration-ms="245" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:50 CDT" name="setUp" finished-at="2026-07-22T22:16:52 CDT" duration-ms="2096" status="PASS">
+        </test-method> <!-- getUserTest -->
+        <test-method signature="updateUserTest()[pri:3, instance:com.demo.sdet.api.tests.UserTests@6d763516]" started-at="2026-07-23T22:29:02 CDT" name="updateUserTest" finished-at="2026-07-23T22:29:02 CDT" duration-ms="255" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLogin(com.demo.sdet.model.LoginData)[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:52 CDT" name="verifyLogin" data-provider="loginData" finished-at="2026-07-22T22:16:53 CDT" duration-ms="443" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.demo.sdet.model.LoginData@1a5f7e7c]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- updateUserTest -->
+        <test-method signature="deleteUserTest()[pri:4, instance:com.demo.sdet.api.tests.UserTests@6d763516]" started-at="2026-07-23T22:29:02 CDT" name="deleteUserTest" finished-at="2026-07-23T22:29:02 CDT" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:53 CDT" name="tearDown" finished-at="2026-07-22T22:16:53 CDT" duration-ms="291" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:53 CDT" name="setUp" finished-at="2026-07-22T22:16:56 CDT" duration-ms="2325" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyLogin(com.demo.sdet.model.LoginData)[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:16:56 CDT" name="verifyLogin" data-provider="loginData" finished-at="2026-07-22T22:17:06 CDT" duration-ms="10409" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.demo.sdet.model.LoginData@2301b75]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Products page was not displayed after login expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Products page was not displayed after login expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.demo.sdet.tests.LoginTest.verifyLogin(LoginTest.java:36)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.demo.sdet.tests.LoginTest@15ff3e9e]" started-at="2026-07-22T22:17:06 CDT" name="tearDown" finished-at="2026-07-22T22:17:06 CDT" duration-ms="217" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.demo.sdet.tests.LoginTest -->
+        </test-method> <!-- deleteUserTest -->
+      </class> <!-- com.demo.sdet.api.tests.UserTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

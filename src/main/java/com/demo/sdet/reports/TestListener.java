@@ -19,65 +19,86 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
 
+        System.out.println(
+            "EXTENT START : " + result.getMethod().getMethodName()
+        );
+
         ExtentTest test =
                 ExtentManager
                         .getExtentReports()
-                        .createTest(result.getMethod().getMethodName());
+                        .createTest(
+                                result.getMethod().getMethodName()
+                        );
 
         ExtentTestManager.setTest(test);
-
     }
-
     @Override
     public void onTestSuccess(ITestResult result) {
-
-        String screenshot =
-                ScreenshotUtils.captureScreenshot(
-                        result.getMethod().getMethodName()
-                );
 
         ExtentTestManager
                 .getTest()
                 .pass("Test Passed");
 
-        try {
-
-            ExtentTestManager
-                    .getTest()
-                    .addScreenCaptureFromPath(screenshot);
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
-
-        }
-
     }
+//    @Override
+//    public void onTestSuccess(ITestResult result) {
+//
+//        String screenshot =
+//                ScreenshotUtils.captureScreenshot(
+//                        result.getMethod().getMethodName()
+//                );
+//
+//        ExtentTestManager
+//                .getTest()
+//                .pass("Test Passed");
+//
+//        try {
+//
+//            ExtentTestManager
+//                    .getTest()
+//                    .addScreenCaptureFromPath(screenshot);
+//
+//        } catch (Exception e) {
+//
+//            e.printStackTrace();
+//
+//        }
+//
+//    }
 
     @Override
     public void onTestFailure(ITestResult result) {
-
-        String screenshot =
-                ScreenshotUtils.captureScreenshot(
-                        result.getMethod().getMethodName());
 
         ExtentTestManager
                 .getTest()
                 .fail(result.getThrowable());
 
-        try {
-
-            ExtentTestManager
-                    .getTest()
-                    .addScreenCaptureFromPath(screenshot);
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
-
-        }
-
     }
+    
+//    @Override
+//    public void onTestFailure(ITestResult result) {
+//
+//        String screenshot =
+//                ScreenshotUtils.captureScreenshot(
+//                        result.getMethod().getMethodName());
+//
+//        ExtentTestManager
+//                .getTest()
+//                .fail(result.getThrowable());
+//
+//        try {
+//
+//            ExtentTestManager
+//                    .getTest()
+//                    .addScreenCaptureFromPath(screenshot);
+//
+//        } catch (Exception e) {
+//
+//            e.printStackTrace();
+//
+//        }
+//
+//    }
 
     @Override
     public void onTestSkipped(ITestResult result) {
