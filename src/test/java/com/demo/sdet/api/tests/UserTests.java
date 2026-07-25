@@ -79,11 +79,11 @@ public class UserTests {
 
         userPayload.setFirstName("UpdatedName");
 
-        Response response =
-                UserEndPoints.updateUser(
-                        userPayload.getUsername(),
-                        userPayload
-                );
+ Response response =
+        UserEndPoints.updateUser(
+                userPayload.getUsername(),
+                userPayload
+        );
         response.then().log().all();
 
         ResponseValidator.validateStatusCode(
