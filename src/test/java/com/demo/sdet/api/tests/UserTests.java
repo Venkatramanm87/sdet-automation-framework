@@ -81,10 +81,9 @@ public class UserTests {
 
         Response response =
                 UserEndPoints.updateUser(
-                        userPayload,
-                        userPayload.getUsername()
+                        userPayload.getUsername(),
+                        userPayload
                 );
-
         response.then().log().all();
 
         ResponseValidator.validateStatusCode(
