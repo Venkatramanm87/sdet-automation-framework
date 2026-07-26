@@ -54,10 +54,6 @@ jobs:
           google-chrome --version
 
 
-      - name: Build Project
-        run: mvn clean compile
-
-
       # Existing TestNG execution
       - name: Execute TestNG Suite
         if: github.event.inputs.execution_mode == 'testng' || github.event.inputs.execution_mode == ''
