@@ -12,8 +12,19 @@ on:
       - master
 
   workflow_dispatch:
+    inputs:
+      execution_mode:
+        description: "Choose automation execution mode"
+        required: true
+        default: "testng"
+        type: choice
+        options:
+          - testng
+          - serenity
+
 
 jobs:
+
   automation-test:
 
     runs-on: ubuntu-latest
@@ -23,31 +34,57 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Java
+
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '21'
+          cache: maven
 
-      - name: Cache Maven Packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1
+
+
+      - name: Verify Environment
+        run: |
+          java -version
+          mvn -version
+          google-chrome --version
+
 
       - name: Build Project
         run: mvn clean compile
 
+
+      # Existing TestNG execution
       - name: Execute TestNG Suite
+        if: github.event.inputs.execution_mode == 'testng' || github.event.inputs.execution_mode == ''
         run: mvn test
 
+
+      # New Serenity execution
+      - name: Execute Serenity BDD Suite
+        if: github.event.inputs.execution_mode == 'serenity'
+        run: mvn clean verify -Pserenity
+
+
+      # Upload TestNG / Maven reports
       - name: Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: TestReports
+          name: TestNG-Reports
           path: |
             test-output
-            target
+            target/surefire-reports
+
+
+      # Upload Serenity report
+      - name: Upload Serenity Report
+        if: always() && github.event.inputs.execution_mode == 'serenity'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Serenity-Report
+          path: target/site/serenity
